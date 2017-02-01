@@ -5,10 +5,10 @@
 {% block title %}{% trans "Register for an account" %}{% endblock %}
 
 {% block content %}
-<form method="post" action="">
+<form class="form-group" method="post" action="">
     {% csrf_token %}
     {{ form.as_p }}
-    <input type="submit" value="{% trans 'Submit' %}" />
+    <input class="btn btn-primary" type="submit" value="{% trans 'Submit' %}" />
 </form>
 {% endblock %}
 

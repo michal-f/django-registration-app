@@ -1,12 +1,21 @@
 {% load i18n %}
+{% load static %}
+
 <html lang="en">
 
 <head>
     <title>Django Registration Test App</title>
+
+
+<meta name="generator" content="HTML Tidy for Linux (vers 25 March 2009), see www.w3.org"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link href="{% static 'bootstrap-4.0.0/css/bootstrap.min.css' %}" rel="stylesheet">
+    {% block css %}{% endblock %}
 </head>
 
 <body>
-<h1>BASE HTML</h1>
     <div id="header">
     {% block header %}
     <a href="{% url 'index' %}">{% trans "Home" %}</a> |
@@ -22,11 +31,24 @@
     </div>
 
     <div id="content">
+         <div class="container">
     <h1>{% block title %}{% endblock %}</h1>
     {% block content %}
 
     {% endblock content %}
-    </div>
+    </div></div>
+
+
+
+
+<div class="container">
+    {% block js %}
+        <script type="text/javascript" src="{% static 'bootstrap-4.0.0/js/bootstrap.min.js' %}"></script>
+    {% endblock %}
+</div>
+<div id="footer-div">
+    {% include "footer.html" %}
+</div>
 
     <div id="footer">
     {% block footer %}
