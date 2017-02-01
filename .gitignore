@@ -1,0 +1,11 @@
+*.pyc
+local_settings.py
+env
+.idea
+db.sqlite3
+/coverage_html
+/htmlcov
+.coverage
+Vagrantfile
+scripts/*
+*.temp
