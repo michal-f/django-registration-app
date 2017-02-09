@@ -7,8 +7,50 @@
 {% block content %}
 <form class="form-group" method="post" action="">
     {% csrf_token %}
-    {{ form.as_p }}
-    <input class="btn btn-primary" type="submit" value="{% trans 'Submit' %}" />
+    <!--AUTO  GENERATE FORM-->
+    <!--{{ form.as_p }}-->
+    <!--<hr>-->
+    <table class="table table-hover">
+        <thead>
+        {{ form.non_field_errors }}
+        </thead>
+        <tr>
+            <div class="fieldWrapper form-group">
+                {{ form.username.errors }}
+                <th scope="row"><label>{{ form.username.label_tag }}</label></th>
+                <td class=""> {{ form.username}}
+                    <small class="text-muted">{{ form.username.help_text}}</small>
+            </div>
+        </tr>
+        <tr>
+            <div class="fieldWrapper">
+                {{ form.email.errors }}
+                <th scope="row"><label>{{ form.email.label_tag }}</label></th>
+                <td> {{ form.email }}
+                    <small class="text-muted">{{ form.email.help_text}}</small>
+            </div>
+        </tr>
+        <tr>
+            <div class="fieldWrapper">
+                {{ form.password1.errors }}
+                <th scope="row"><label>{{ form.password1.label_tag }}</label></th>
+                <td> {{ form.password1 }}
+                    <small class="text-muted">{{ form.password1.help_text}}</small>
+                </td>
+            </div>
+        </tr>
+        <tr>
+            <div class="fieldWrapper">
+                {{ form.password2.errors }}
+                <th scope="row"><label>confirmation:</label></th>
+                <td> {{ form.password2 }}
+                    <small class="text-muted">{{ form.password2.help_text}}</small>
+                </td>
+            </div>
+        </tr>
+    </table>
+
+    <input class="btn btn-primary" type="submit" value="{% trans 'Submit' %}"/>
 </form>
 {% endblock %}
 
@@ -19,8 +61,8 @@ Used to show the form users will fill out to register. By default, has
 the following context:
 
 ``form``
-    The registration form. This will be an instance of some subclass
-    of ``django.forms.Form``; consult `Django's forms documentation
-    <http://docs.djangoproject.com/en/dev/topics/forms/>`_ for
-    information on how to display this in a template.
+The registration form. This will be an instance of some subclass
+of ``django.forms.Form``; consult `Django's forms documentation
+<http://docs.djangoproject.com/en/dev/topics/forms/>`_ for
+information on how to display this in a template.
 {% endcomment %}

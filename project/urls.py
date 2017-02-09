@@ -16,8 +16,12 @@ Including another URLconf
 from django.conf.urls import url, include
 from django.contrib import admin
 from register.views import *
+
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', IndexView.as_view(), name='index'),
-    url(r'^accounts/', include('registration.backends.hmac.urls')),
+    url(r'^accounts/', include('registration.backends.hmac.urls')),  # HMAC REGISTRATION
+    url(r'^accounts2/', include('registration.backends.simple.urls')),  # AUTOREGISTRATION
+    url(r'^accounts3/', include('registration.backends.model_activation.urls')),  # MODEL BASED
+
 ]
