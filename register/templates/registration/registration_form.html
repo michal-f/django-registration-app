@@ -8,18 +8,28 @@
 <form class="form-group" method="post" action="">
     {% csrf_token %}
     <!--AUTO  GENERATE FORM-->
-    <!--{{ form.as_p }}-->
-    <!--<hr>-->
+    {{ form.as_p }}
+
+    <hr>
+    <br>
+     <hr>
     <table class="table table-hover">
         <thead >
         <div class="btn-danger"> {{ form.non_field_errors }}</div>
         </thead>
         <tr>
-            <div class="fieldWrapper form-group">
+            <div class=" form-group">
                 <th scope="row"><label>{{ form.username.label_tag }}</label></th>
-                <td class=""> {{ form.username}}
+                <td class=""><p>{{ form.username}}</p>
                     <small class="text-muted">{{ form.username.help_text}}</small>
                 <div class="btn-danger">{{ form.username.errors }}</div>
+            </div>
+        </tr>        <tr>
+            <div class="fieldWrapper form-group">
+                <th scope="row"><label>{{ form.extra.label_tag }}</label></th>
+                <td class=""> {{ form.extra}}
+                    <small class="text-muted">{{ form.extra.help_text}}</small>
+                <div class="btn-danger">{{ form.extra.errors }}</div>
             </div>
         </tr>
         <tr>

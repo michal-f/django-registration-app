@@ -29,6 +29,7 @@ ALLOWED_HOSTS = []
 
 
 # Application definition
+AUTH_USER_MODEL = 'register.MyUser'
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -37,8 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'register',
-    'registration'
+    'register',  # MyApp
+    'registration'  # Imported -> djangoregistration 2.2 app
 ]
 
 MIDDLEWARE = [
